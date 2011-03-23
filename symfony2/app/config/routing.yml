@@ -1,3 +1,0 @@
-_welcome:
-    resource: "@AcmeDemoBundle/Controller/WelcomeController.php"
-    type:     annotation
