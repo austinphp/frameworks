@@ -1,0 +1,47 @@
+PHP Framework CRUD Application
+-----------------------------------------------
+
+For this application we are going to be building a simple blogging engine that will allow people to post blog entries and comment on the posts. The SQL to build your tables will be provided as well as the HTML and CSS layouts for your view layer.  All you will need to do is build the functionality to allow the user to create, read, update and delete their blog entries. If you want to anything additional like a user management system or rss feeds then that will be icing on the cake. 
+
+Be prepared to talk! As a part of this project you will be, of course, giving a presentation on the work that you did. If you add to much stuff then you might run out of time. Please plan on giving a short overview on how the framework works and general quickstart info to get people up and running. 
+
+*********************************
+ CREATE
+*********************************
+
+With your application you should be able to add a new blog post and post new comments on that blog post.  The blog post will have a Title, Body, ShortDescription, Tags, CreatedOn and UpdatedOn fields. The ShortDescription and the Tags field can be NULL and the UpdatedOn field should update itself. So you should validate that your Title and Body are not NOT NULL before inserting a new blog post. 
+
+A simple web form should do the trick here. If you want to do some fancy form styling then it is up to you. Also optional is anything AJAX related. 
+
+*********************************
+READ
+*********************************
+
+I will provide the HTML for you simple layouts. It will be pretty basic. The key is here to focus on the functionality so that the community can better learn from our examples. 
+I will also provide a basic database structure for the blog. Some major components that you will need to display are. 
+Title of the blog
+Title of a post
+Content of a post
+Date of the post
+Which user posted it
+
+
+All the commenting will be done by a third party service for the primary reason to combat spam. For this project we are going to be implementing the Disqus commenting. It is fairly simple to do and following the documentation for it will be easy. 
+
+*********************************
+UPDATE
+*********************************
+
+We are going to make a login system that will allow updating (editing), creating and deleting.  So after logging in to the admin area you can see a list of blog posts in a table format. One of the columns of the table for each of the blog posts will be a Update or Edit link/button. Another one will be a delete button, but I will get to that. 
+
+Updating is just like creating, so just copy the form and possibly some of the logic from your create in order to use for the update aspect. You will need to have some sort of blog post id around the update link so that your update controller knows which post that you are wanting to edit. 
+
+Make sure that this is an admin area of the blog and that you are always checking to make sure admin or a valid user is logged in. It is up to you on how complicated you want to make your ACL or user management system. I would recommend not spending too much time on it. The idea is that there aren’t going to be very many people who are in the admin area managing the content. 
+
+*********************************
+DELETE
+*********************************
+
+So still in the admin area there is a delete button. Clicking on it will prompt the user if they are sure yes/no. This should be done with javascript alert or a modal popup. If the user clicks yes than update a field that will archive the post but not delete it. Its going to be called IsDeleted or something like this. What we are essentially doing is moving it to the trash bin, but we aren’t going to worry about implementing the trash bin for the initial application. 
+
+For all intensive purposes thou it will be deleted. It won’t show up on the admin page or the publicly visible blog. Also the direct URL to it will no longer work.  This means for all those pages you will have to check to see if this field is 0 or NULL. I haven’t decided on the defaults yet for IsDeleted. 
