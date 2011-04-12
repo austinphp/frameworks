@@ -1,7 +1,15 @@
 <html>
     <head>
+        <title>ZF Sample App</title>
+        <link rel="stylesheet" type="text/css" href="/styles.css"/>
     </head>
     <body>
-        <?=$this->layout()->content?>
+        <div id="main">
+            <?=$this->layout()->content?>
+            <div id="footer">
+                <a href="/admin">Admin</a> | <a href="/admin/logout">Log Out</a>
+            </div>
+        </div>
+
     </body>
 </html>

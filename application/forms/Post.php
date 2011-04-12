@@ -9,10 +9,8 @@ class Form_Post extends Zend_Form
         $this->setMethod('POST');
         $this->setAction('/admin/create');
 
-        if ($values['id']) {
-            $id = $this->createElement('hidden', 'post_id');
-            $id->setValue($values['id']);
-        }
+        $id = $this->createElement('hidden', 'id');
+        $id->setValue($values['id']);
 
         $title = $this->createElement('text', 'title');
         $title->setRequired(true)
@@ -36,14 +34,11 @@ class Form_Post extends Zend_Form
 
         $submit = $this->createElement('submit', 'submit');
 
-        if ($id) {
-            $this->addElement($id);
-        }
-
         $this->addElement($title)
              ->addElement($shortDescription)
              ->addElement($body)
              ->addElement($slug)
+             ->addElement($id)
              ->addElement($submit);
     }
 }

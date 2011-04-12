@@ -2,17 +2,13 @@
 
 class PostController extends Zend_Controller_Action
 {
-
-    public function init()
-    {
-        /* Initialize action controller here */
-    }
-
     public function indexAction()
     {
-        // action body
+        $slug = $this->_getParam('slug');
+        $postsTable = new Zend_Db_Table('posts');
+        $where = $postsTable->getAdapter()->quoteInto('slug = ?', $slug);
+        $post = $postsTable->fetchRow($where);
+        $this->view->post = $post;
     }
-
-
 }
 

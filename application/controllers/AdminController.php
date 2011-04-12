@@ -77,17 +77,18 @@ class AdminController extends Zend_Controller_Action
             if ($form->isValid($_POST)) {
                 $values = $form->getValues();
                 $values['updated_at'] = time();
-                $where = $postsTable->getAdapter()->quoteInto("WHERE id = ?", $values['id']);
+                $where = $postsTable->getAdapter()->quoteInto("id = ?", $values['id']);
                 $postsTable->update($values, $where);
                 return $this->_redirect('/admin');
             }
         } else {
             $postId = $this->_getParam('id');
-            $post = $postsTable->find(1)->current();
+            $post = $postsTable->find($postId)->current();
             if ($post) {
                 $values = $post->toArray();
             }
             $form = new Form_Post($values);
+            $form->setAction('/admin/edit');
             $this->view->form = $form;
         }
     }
@@ -96,7 +97,7 @@ class AdminController extends Zend_Controller_Action
     {
         $postId = $this->_getParam('id');
         $postsTable = new Zend_Db_Table('posts');
-        $where = $postsTable->getAdapter()->quoteInto('WHERE id = ?', $postId);
+        $where = $postsTable->getAdapter()->quoteInto('id = ?', $postId);
         $postsTable->delete($where);
         return $this->_redirect('/admin');
     }
