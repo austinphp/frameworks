@@ -1,6 +1,6 @@
 <?php
 
-class IndexController extends Zend_Controller_Action
+class TagController extends Zend_Controller_Action
 {
 
     public function init()
@@ -12,7 +12,7 @@ class IndexController extends Zend_Controller_Action
     {
         // action body
     }
+
+
 }
-
-
 

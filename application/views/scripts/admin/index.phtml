@@ -1,0 +1,8 @@
+<h3>Posts</h3>
+<?if ($this->posts){?>
+    <?foreach ($this->posts as $post){?>
+        <?=$post->title?> | Created: <?=date("Y-m-d H:i:s", $post->created_at)?> | Last Updated: <?=date("Y-m-d H:i:s", $post->updated_at)?> | <a href="/admin/edit/id/<?=$post->id?>">Edit Post</a> | <a href="/admin/delete/id/<?=$post->id?>">Delete Post</a><br/>
+    <?}?>
+<?}?>
+<a href="/admin/create">Create new post</a>
+<a href="/admin/logout">Log Out</a>
