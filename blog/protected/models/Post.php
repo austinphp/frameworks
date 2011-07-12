@@ -199,4 +199,17 @@ class Post extends CActiveRecord
 			),
 		));
 	}
+	
+	public function scopes()
+	{
+	        return array(
+	            'published'=>array(
+	                'condition'=>'status=2',
+	            ),
+	            'recently'=>array(
+	                'order'=>'create_time DESC',
+	                'limit'=>5,
+	            ),
+	        );
+	}
 }

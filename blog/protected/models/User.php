@@ -99,4 +99,27 @@ class User extends CActiveRecord
 	{
 		return uniqid('',true);
 	}
+	
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('username',$this->username,true);
+		$criteria->compare('password',$this->password,true);
+		$criteria->compare('salt',$this->salt,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('profile',$this->profile,true);
+
+		return new CActiveDataProvider(get_class($this), array(
+			'criteria'=>$criteria,
+		));
+	}
 }
