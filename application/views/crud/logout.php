@@ -3,7 +3,7 @@
 
 <div id="main">
 	
-	<h2></h2>
+	<h2>Log Out LOL</h2>
 	
 	<div class="clear"></div>
     <div id="footer">

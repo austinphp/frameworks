@@ -3,10 +3,9 @@
 
 <div id="main">
 	
-	<h2>Admin Index</h2>
-	
-	<div id="adminMenu"><a href="/admin/create">New Post</a></div>
-	<?php echo $table; ?>
+	<h2>CRUD <?php echo $title; ?></h2>
+
+	<?php echo $form; ?>
 	
 	<div class="clear"></div>
     <div id="footer">
