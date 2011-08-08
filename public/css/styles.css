@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #666;
+    font-family: Georgia;
+}
+
+#main {
+    width: 800px;
+    margin: 10px auto;
+    background-color: white;
+    padding: 20px;
+}
+
+.short-desc {
+    font-style: italic;
+}
+
+.post {
+    border: 2px dashed #aaa;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#footer {
+    margin-top: 50px;
+}
+
+#postslist {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#postslist td,
+#postslist th{
+    border: 1px solid #ccc;
+    padding: 5px;
+}
