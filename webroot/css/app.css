@@ -1,0 +1,35 @@
+.post {
+    border: 2px dashed #aaa;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.post .actions {
+	float:right;
+}
+
+.post h3 {
+	margin-top: 0;
+}
+
+#new {
+	font-size: 1.5em;
+	margin: 1em 0;
+}
+/* Alerts */
+div.alert {
+	border-width:1px;
+	border-style: dotted;
+	font-size: 2em;
+	text-align: center;
+	padding: .5em 0;
+	margin: .5em 0 0 0;
+}
+div.alert.success {
+	border-color:#00FF00;
+	color:#009900;
+}
+div.alert.failure {
+	border-color:#FF0000;
+	color:#990000;
+}
